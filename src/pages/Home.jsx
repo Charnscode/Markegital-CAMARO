@@ -157,7 +157,7 @@ export default function Home() {
                 className="aspect-[4/3] w-full rounded-3xl object-cover shadow-soft"
               />
               <div className="absolute -bottom-6 -right-6 hidden glass-card px-6 py-5 sm:block">
-                <p className="font-display text-3xl text-gold">5+</p>
+                <p className="font-display text-3xl text-gold">3+</p>
                 <p className="text-xs text-white/60">années au service des PME</p>
               </div>
             </div>
