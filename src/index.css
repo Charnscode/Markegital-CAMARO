@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+
+  html {
+    @apply bg-navy-900;
+  }
+
+  body {
+    @apply bg-navy-gradient bg-fixed text-white font-body antialiased;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background: #F4B400;
+    color: #0B1F3A;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050d1a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #133B6B;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #F4B400;
+  }
+
+  :focus-visible {
+    outline: 2px solid #F4B400;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-xs tracking-[0.3em] uppercase text-gold;
+  }
+
+  .glass-card {
+    @apply bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-3xl shadow-glass;
+  }
+
+  .glass-card-hover {
+    @apply transition-all duration-500 ease-out hover:scale-[1.03] hover:bg-white/[0.08] hover:border-gold/40 hover:-translate-y-2.5 hover:shadow-gold hover:rotate-[0.5deg];
+  }
+
+  /* Lighter variant used over the hero photo so the background stays visible */
+  .glass-card-hero {
+    @apply rounded-2xl border border-white/[0.08] bg-white/[0.015] shadow-glass transition-all duration-500 hover:bg-white/[0.05] hover:border-gold/40 hover:scale-105;
+  }
+
+  .btn-gold {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gold px-7 py-3.5 font-body font-semibold text-navy-900 shadow-gold transition-all duration-300 hover:bg-gold-light hover:-translate-y-1 hover:scale-105 active:translate-y-0 active:scale-100 animate-pulse-glow;
+  }
+  .btn-gold::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  .btn-gold:hover::after {
+    animation: shine 1.1s ease-in-out;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-3.5 font-body font-semibold text-white transition-all duration-300 hover:border-gold hover:text-gold hover:-translate-y-1 hover:scale-105;
+  }
+
+  .section-pad {
+    @apply px-6 py-24 md:px-12 md:py-32 lg:px-20;
+  }
+
+  .container-max {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .divider-gold {
+    @apply h-px w-24 bg-gold-line;
+  }
+
+  .icon-pop {
+    @apply transition-transform duration-300;
+  }
+  .group:hover .icon-pop {
+    animation: wiggle 0.6s ease-in-out;
+  }
+
+  .blob-decor {
+    @apply pointer-events-none absolute rounded-full blur-3xl animate-blob;
+  }
+}
+
+/* Custom cursor (desktop only) */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: #F4B400;
+}
+
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(244, 180, 0, 0.5);
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+@media (max-width: 1024px), (hover: none) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
