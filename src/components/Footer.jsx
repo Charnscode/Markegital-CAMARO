@@ -105,7 +105,6 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/40 md:flex-row">
           <p>© {new Date().getFullYear()} Markegital CAMARO. Tous droits réservés.</p>
-          <p>Conçu avec exigence à Abomey-Calavi, Bénin.</p>
         </div>
       </div>
     </footer>
