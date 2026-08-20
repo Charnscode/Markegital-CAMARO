@@ -18,9 +18,9 @@ const heroCards = [
 ]
 
 const stats = [
-  { value: 50, suffix: '+', label: 'Projets réalisés' },
-  { value: 30, suffix: '+', label: 'Clients satisfaits' },
-  { value: 5, suffix: '+', label: "Années d'expérience" },
+  { value: 20, suffix: '+', label: 'Projets réalisés' },
+  { value: 20, suffix: '+', label: 'Clients satisfaits' },
+  { value: 3, suffix: '+', label: "Années d'expérience" },
   { value: 100, suffix: '%', label: 'Engagement qualité' },
 ]
 
